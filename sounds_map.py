@@ -3,4 +3,5 @@ class SoundPath:
     tap = "tap-notification-180637.mp3"
     ding = "ding-1-14705.mp3"
 
-LANG = 'en'
+
+LANG = "en"
