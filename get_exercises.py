@@ -8,9 +8,11 @@ from exercises import EXERCISES
 def _is_affirmative(text):
     return False if text.upper() != "Y" else True
 
+
 def dismiss_athlete():
     print("Have a nice day!")
     quit()
+
 
 def prompt_workout_desire():
     if not _is_affirmative(input("Want to work out today? (Y/N)")):
@@ -29,7 +31,8 @@ def prompt_workout_duration():
 
 
 def determine_number_exercises(duration):
-    return math.floor(duration/5)
+    return math.floor(duration / 5)
+
 
 def prompt_eligible_equipment():
     eligible_equipment = {Equipment.none_needed}
@@ -42,22 +45,29 @@ def prompt_eligible_equipment():
 
 
 def get_eligible_exercises(equipment_on_hand):
-    return [e_name for e_name, e in EXERCISES.items() if any(eq in e.equipment for eq in equipment_on_hand)]
+    return [
+        e_name
+        for e_name, e in EXERCISES.items()
+        if any(eq in e.equipment for eq in equipment_on_hand)
+    ]
 
 
-def get_exercises(number_of_exercises, possible_exercises, upper_to_lower_ratio=0.5):
+def get_exercises(num_exercises, possible_exercises, upper_to_lower_ratio=0.5):
     # filter to eligible exercises
-    if len(possible_exercises) > number_of_exercises:
+    if len(possible_exercises) > num_exercises:
         print("\nSelecting random exercises")
         selected_exercises = set()
-        while len(selected_exercises) < number_of_exercises:
-            rand_exercise = possible_exercises[randrange(len(possible_exercises))]
+        while len(selected_exercises) < num_exercises:
+            rand_exercise = possible_exercises[
+                randrange(len(possible_exercises))
+            ]
             if rand_exercise not in selected_exercises:
                 selected_exercises.add(rand_exercise)
         return selected_exercises
     else:
         print("You have too much time, you can complete all exercises")
         return possible_exercises
+
 
 def get_random_exercises():
     prompt_workout_desire()
