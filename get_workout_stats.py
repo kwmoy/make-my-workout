@@ -68,6 +68,11 @@ workout_log = {
         "Pushup",
         "Squat",
     ],
+    "2024-03-08": [
+        "Squat",
+        "Bicep Curl to Shoulder Press",
+        "Lunge",
+    ],
 }
 
 

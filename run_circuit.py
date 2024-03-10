@@ -17,17 +17,13 @@ def rest_between_sets():
     pass
 
 
-active_time = 40
+active_time = 20
 rest_time = 20
 
 my_exercises = get_random_exercises()
 run_circuit(my_exercises, active_time, rest_time)
-rest_and_say_words(
-    active_time, "Round 1 is complete! One minute until round 2"
-)
+rest_and_say_words(active_time, "round done")
 run_circuit(my_exercises, active_time, rest_time)
-rest_and_say_words(
-    active_time, "Round 2 is complete! One minute until round 3"
-)
+rest_and_say_words(active_time, "round done")
 run_circuit(my_exercises, active_time, rest_time)
-rest_and_say_words(active_time, "you're done!")
+rest_and_say_words(active_time, "round done")
